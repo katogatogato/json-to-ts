@@ -2,3 +2,5 @@ node_modules/
 public/js/
 *.js.map
 .DS_Store
+.env
+.env.local
