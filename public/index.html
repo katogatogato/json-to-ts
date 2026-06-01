@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON to TypeScript — Instant Type Generator</title>
+  <meta name="description" content="Paste JSON, get clean TypeScript interfaces. Instant, client-side, shareable.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔄</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="toolbar">
+      <div class="toolbar-left">
+        <h1 class="title">JSON <span class="arrow">→</span> TypeScript</h1>
+      </div>
+      <div class="toolbar-right">
+        <button id="sample-btn" class="toolbar-btn" title="Load sample data">Sample</button>
+        <button id="options-toggle" class="toolbar-btn" title="Toggle options">Options</button>
+        <button id="share-btn" class="toolbar-btn" title="Copy shareable link">Share</button>
+        <button id="copy-btn" class="toolbar-btn" title="Copy TypeScript output">Copy</button>
+      </div>
+    </header>
+
+    <div id="options-panel" class="options-panel">
+      <div class="options-grid">
+        <label class="option-group">
+          <span class="option-label">Root name</span>
+          <input type="text" id="opt-root-name" value="RootObject" spellcheck="false">
+        </label>
+        <label class="option-group checkbox-group">
+          <input type="checkbox" id="opt-use-type">
+          <span class="option-label">Use <code>type</code> instead of <code>interface</code></span>
+        </label>
+        <label class="option-group checkbox-group">
+          <input type="checkbox" id="opt-export">
+          <span class="option-label">Add <code>export</code> keyword</span>
+        </label>
+        <label class="option-group checkbox-group">
+          <input type="checkbox" id="opt-semicolons">
+          <span class="option-label">Semicolons</span>
+        </label>
+        <label class="option-group checkbox-group">
+          <input type="checkbox" id="opt-sort">
+          <span class="option-label">Sort properties alphabetically</span>
+        </label>
+        <div class="option-group">
+          <span class="option-label">Indentation</span>
+          <div class="radio-group">
+            <label><input type="radio" name="indent" id="opt-indent-2" value="2" checked> 2 spaces</label>
+            <label><input type="radio" name="indent" id="opt-indent-4" value="4"> 4 spaces</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="error-bar" class="error-bar"></div>
+
+    <main id="editor-container" class="editor-container">
+      <div id="input-panel" class="panel input-panel">
+        <div class="panel-header">
+          <span class="panel-title">JSON</span>
+        </div>
+        <div class="input-wrapper">
+          <div id="line-numbers" class="line-numbers"></div>
+          <textarea id="json-input" spellcheck="false" placeholder="Paste your JSON here..."></textarea>
+        </div>
+      </div>
+
+      <div id="divider" class="divider" title="Drag to resize">
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="panel output-panel">
+        <div class="panel-header">
+          <span class="panel-title">TypeScript</span>
+        </div>
+        <pre id="ts-output" class="output-content"><span class="placeholder">Paste JSON to generate TypeScript</span></pre>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

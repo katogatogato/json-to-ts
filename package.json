@@ -1,0 +1,39 @@
+{
+  "name": "json-to-ts-playground",
+  "version": "1.0.0",
+  "description": "Paste JSON, get clean TypeScript interfaces — instant, client-side, shareable",
+  "author": "katogatogato",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/katogatogato/json-to-ts"
+  },
+  "main": "./public/js/converter.js",
+  "types": "./public/js/converter.d.ts",
+  "exports": {
+    ".": {
+      "import": "./public/js/converter.js",
+      "types": "./public/js/converter.d.ts"
+    }
+  },
+  "files": [
+    "public/js/",
+    "src/"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "json",
+    "typescript",
+    "converter",
+    "interface",
+    "types",
+    "generator",
+    "playground"
+  ],
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}
